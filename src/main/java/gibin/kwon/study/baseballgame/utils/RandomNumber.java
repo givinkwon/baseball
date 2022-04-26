@@ -14,7 +14,7 @@ public class RandomNumber {
 
     private static int getUniqueRandomNumber(int[] numbers, int start, int end, int i) {
         int randomNumber = (int)(Math.random() * 10);
-        while (!isUnique(numbers, i, randomNumber)) {
+        while (!isUnique(numbers, i, randomNumber) && randomNumber == 10) {
             randomNumber = (int)(Math.random() * 10);
         }
         return randomNumber;
