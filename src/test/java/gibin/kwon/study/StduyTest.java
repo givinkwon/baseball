@@ -30,7 +30,6 @@ public class StduyTest {
         String source = "1";
         List<String> goal = Arrays.asList("1");
         List<String> result = Arrays.asList(source.split(","));
-//        assertThat(result).containsExactly(String.valueOf(goal));
         assertThat(result.equals(goal));
     }
 
