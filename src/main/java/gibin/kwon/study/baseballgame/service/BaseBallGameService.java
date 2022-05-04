@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 public class BaseBallGameService {
 
-    final int SIZE = 3;
-    final int START_NUMBER = 1;
-    final int END_NUMBER = 9;
-    final int CHECK_RESULT = 0;
+    private final static int SIZE = 3;
+    private final static int START_NUMBER = 1;
+    private final static int END_NUMBER = 9;
+    private final static int CHECK_RESULT = 0;
     Information information = new Information();
     int[] inputnumber = new int[3];
 
