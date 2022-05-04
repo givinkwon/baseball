@@ -22,7 +22,7 @@ public class StduyTest {
         String source = "1,2";
         List<String> goal = Arrays.asList("1", "2");
         List<String> result = Arrays.asList(source.split(","));
-        assertThat(result.equals(goal));
+        assertThat(result).isEqualTo(goal);
     }
 
     @Test
@@ -31,8 +31,7 @@ public class StduyTest {
         String source = "1";
         List<String> goal = Arrays.asList("1");
         List<String> result = Arrays.asList(source.split(","));
-//        assertThat(result).containsExactly(String.valueOf(goal));
-        assertThat(result.equals(goal));
+        assertThat(result).isEqualTo(goal);
     }
 
     @Test
@@ -40,8 +39,8 @@ public class StduyTest {
     void subStringTest() {
         String source = "(1,2)";
         String goal = "1,2";
-        String result = source.substring(1, 3);
-        assertThat(result.equals(goal));
+        String result = source.substring(1, 4);
+        assertThat(result).isEqualTo(goal);
     }
 
     @Test
@@ -55,9 +54,9 @@ public class StduyTest {
         Character result_B = source.charAt(1);
         Character result_C = source.charAt(2);
 
-        assertThat(result_A.equals(goal_A));
-        assertThat(result_B.equals(goal_B));
-        assertThat(result_C.equals(goal_C));
+        assertThat(result_A).isEqualTo(goal_A);
+        assertThat(result_B).isEqualTo(goal_B);
+        assertThat(result_C).isEqualTo(goal_C);
 
         assertThatThrownBy(() -> {
             Character result_error = source.charAt(3);
