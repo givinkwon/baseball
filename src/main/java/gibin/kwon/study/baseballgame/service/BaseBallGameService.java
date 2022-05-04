@@ -10,6 +10,7 @@ public class BaseBallGameService {
     final int SIZE = 3;
     final int START_NUMBER = 1;
     final int END_NUMBER = 9;
+    final int CHECK_RESULT = 0;
     Information information = new Information();
     int[] inputnumber = new int[3];
 
@@ -29,15 +30,15 @@ public class BaseBallGameService {
     }
 
     private void printResult() {
-        if(information.getStrikeCount() > 0) {
+        if(information.getStrikeCount() > CHECK_RESULT) {
             System.out.println(information.getStrikeCount() + " 스트라이크");
         }
 
-        if(information.getBallCount() > 0) {
+        if(information.getBallCount() > CHECK_RESULT) {
             System.out.println(information.getBallCount() + " 볼");
         }
 
-        if(information.getBallCount() == 0 && information.getStrikeCount() == 0){
+        if(information.getBallCount() == CHECK_RESULT && information.getStrikeCount() == CHECK_RESULT){
             System.out.println("4볼");
         }
     }
