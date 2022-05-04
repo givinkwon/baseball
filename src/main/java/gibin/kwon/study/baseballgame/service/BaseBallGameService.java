@@ -70,12 +70,16 @@ public class BaseBallGameService {
     private void compute(int[] GoalNumber, int[] inputNumber, int index) {
         int temp = -1;
         for (int i = 0; i < GoalNumber.length; i++) {
-            if (GoalNumber[i] == inputNumber[index]) {
-                temp = i;
-                break;
-            }
+            temp = computeMatchCount(GoalNumber, inputNumber, index, i, temp);
         }
         incCount(index, temp);
+    }
+
+    private int computeMatchCount(int[] GoalNumber, int[] inputNumber, int index, int i, int temp) {
+        if (GoalNumber[i] == inputNumber[index]) {
+            return i;
+        }
+        return temp;
     }
 
     private void incCount(int index, int temp) {
