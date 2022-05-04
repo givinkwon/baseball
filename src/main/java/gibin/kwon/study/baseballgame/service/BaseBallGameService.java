@@ -1,6 +1,6 @@
 package gibin.kwon.study.baseballgame.service;
 
-import gibin.kwon.study.baseballgame.domain.Information;
+import gibin.kwon.study.baseballgame.domain.Game;
 import gibin.kwon.study.baseballgame.utils.RandomNumber;
 
 import java.util.Scanner;
@@ -11,11 +11,11 @@ public class BaseBallGameService {
     private final static int START_NUMBER = 1;
     private final static int END_NUMBER = 9;
     private final static int CHECK_RESULT = 0;
-    Information information = new Information();
+    Game game = new Game();
     int[] inputnumber = new int[3];
 
     public void setGoalNumber() {
-        information.setGoalNumber(RandomNumber.getRandomNumbers(SIZE, START_NUMBER, END_NUMBER));
+        game.setGoalNumber(RandomNumber.getRandomNumbers(SIZE, START_NUMBER, END_NUMBER));
     }
 
     public void playGame() {
@@ -25,26 +25,26 @@ public class BaseBallGameService {
 
             printResult();
 
-            strike = information.getStrikeCount();
+            strike = game.getStrikeCount();
         }
     }
 
     private void printResult() {
-        if(information.getStrikeCount() > CHECK_RESULT) {
-            System.out.println(information.getStrikeCount() + " 스트라이크");
+        if(game.getStrikeCount() > CHECK_RESULT) {
+            System.out.println(game.getStrikeCount() + " 스트라이크");
         }
 
-        if(information.getBallCount() > CHECK_RESULT) {
-            System.out.println(information.getBallCount() + " 볼");
+        if(game.getBallCount() > CHECK_RESULT) {
+            System.out.println(game.getBallCount() + " 볼");
         }
 
-        if(information.getBallCount() == CHECK_RESULT && information.getStrikeCount() == CHECK_RESULT){
+        if(game.getBallCount() == CHECK_RESULT && game.getStrikeCount() == CHECK_RESULT){
             System.out.println("4볼");
         }
     }
 
     private void play() {
-        information.init();
+        game.init();
 
         inputnumber = setInputNumber();
 
@@ -63,7 +63,7 @@ public class BaseBallGameService {
 
     private void computeScore(int[] inputnumber) {
         for (int i = 0; i < 3; i++) {
-            compute(information.getGoalNumber(), inputnumber, i);
+            compute(game.getGoalNumber(), inputnumber, i);
         }
     }
 
@@ -84,10 +84,10 @@ public class BaseBallGameService {
 
     private void incCount(int index, int temp) {
         if (temp != index && temp != -1) {
-            information.incBallCount();
+            game.incBallCount();
         }
         if (temp == index) {
-            information.incStrikeCount();
+            game.incStrikeCount();
         }
     }
 

@@ -1,6 +1,6 @@
 package gibin.kwon.study.baseballgame.domain;
 
-public class Information {
+public class Game {
     int[] goalNumber;
     int[] inputNumber;
     int strikeCount;

@@ -2,8 +2,6 @@ package gibin.kwon.study.baseballgame.controller;
 
 import gibin.kwon.study.baseballgame.service.BaseBallGameService;
 
-import java.util.Scanner;
-
 public class Controller {
 
     BaseBallGameService baseballgameService = new BaseBallGameService();
