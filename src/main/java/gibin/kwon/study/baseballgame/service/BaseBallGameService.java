@@ -14,7 +14,7 @@ public class BaseBallGameService {
     Information information = new Information();
     int[] inputnumber = new int[3];
 
-    public void setNumber() {
+    public void setGoalNumber() {
         information.setGoalNumber(RandomNumber.getRandomNumbers(SIZE, START_NUMBER, END_NUMBER));
     }
 

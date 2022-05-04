@@ -15,7 +15,7 @@ public class Controller {
     }
 
     private void setNumber() {
-        baseballgameService.setNumber();
+        baseballgameService.setGoalNumber();
     }
 
     private void startGame() throws IllegalArgumentException {
