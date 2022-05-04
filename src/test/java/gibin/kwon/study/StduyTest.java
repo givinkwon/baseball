@@ -65,6 +65,23 @@ public class StduyTest {
     }
 
     @Test
+    @DisplayName("해당 문자가 포함되었는 지 error 테스트")
+    void charAtErrortest() {
+        String source = "abc";
+        Character goal_A = 'a';
+        Character goal_B = 'b';
+        Character goal_C = 'c';
+        Character result_A = source.charAt(0);
+        Character result_B = source.charAt(1);
+        Character result_C = source.charAt(2);
+
+        assertThatThrownBy(() -> {
+            Character result_error = source.charAt(3);
+        }).isInstanceOf(StringIndexOutOfBoundsException.class);
+
+    }
+
+    @Test
     @DisplayName("사이즈가 맞는 지 테스트")
     void setSizeTest() {
         Set<String> source = new HashSet<>(Arrays.asList("a", "b", "c"));
